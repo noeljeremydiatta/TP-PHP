@@ -23,7 +23,8 @@ body{
     text-align: center;
     font-weight: bold;
     position: absolute;
-    width: auto; height: auto;
+    width: auto;
+    height: auto;
     bottom: 0; left: 0; right: 0;
     background-color: black;
 }
@@ -31,9 +32,26 @@ body{
     width: fit-content;
     display: inline-block;
 }
-/*.master{
-    display:inline;
-}*/
+.form{
+    width: fit-content;
+    position:absolute;
+}
+
+.form input{
+    border-radius: 10px;
+    border-color: rgb(0, 217, 255);
+    border-style: double;
+}
+.formu{
+    width: fit-content;
+    float: right;
+    position: relative;
+}
+.tab{
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
 .title{
     
     font-size: xx-large;

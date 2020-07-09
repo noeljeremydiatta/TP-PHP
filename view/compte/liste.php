@@ -12,8 +12,8 @@
    
        <div class="nav">
        <ul>
-                <li title ="gerer un compte"><a href="comptes">Gestion des comptes</a></li>
-                <li title ="gerer un client"><a href="clients">Gestion des clients</a></li>
+                <li title ="gerer un compte"><a href="comptes">Créer un compte</a></li>
+                <li title ="gerer un client"><a href="clients">Ajouter un client</a></li>
         </ul>
        </div>
        <div class="title">Formulaire d'ajout de compte</div><br/>
@@ -29,7 +29,7 @@
               </div><br/>
               <div class="group">
                   <label for="numag">Num agence :</label>
-                  <input type="number" name="numag" id="numag"/>
+                  <input type="number" name="agence" id="numag"/>
                </div><br/>
                <div class="group">
                   <label for="rib">RIB :</label>
@@ -37,7 +37,7 @@
                 </div><br/>
                 <div class="group">
                   <label for="numco">Num compte :</label>
-                  <input type="number" name="numco" id="numco"/>
+                  <input type="number" name="numcompte" id="numco"/>
                 </div><br/>
                 <div class="group">
                   <label for="montant">Montant :</label>
@@ -45,11 +45,11 @@
                 </div><br/>
                 <div class="group">
                   <label for="sal">Salaire :</label>
-                  <input type="number" name="sal" id="sal"/>
+                  <input type="number" name="salaire" id="sal"/>
                 </div><br/>
                 <div class="group">
                   <label for="prof">Profession :</label>
-                  <input type="text" name="prof" id="prof"/>
+                  <input type="text" name="profession" id="prof"/>
                 </div><br/>
                 <div>
                   <label for="frais">Frais d'ouveture </label>
@@ -67,40 +67,40 @@
 
           </form><br/>
         </fieldset> <br><br/>
-        <div>Liste des comptes</div>_
-        <fieldset>
-        <table>
+
+        <fieldset class="formu">
+        <div class="tab">Liste des comptes</div><br/>
+        <table border ="1">
         <tr>
         <td>ID</td>
-        <td>Type de Compte</td>
         <td>Num Agence</td>
         <td>RIB</td>
-        <td>Num compte</td>
-        <td>Dépôt inintial</td>
+        <td>numero compte</td>
+        <td>Montant inintial</td>
         <td>Salaire</td>
         <td>Profession</td>
+        <td>Agios</td>
+        <td>Frais</td>
         
         </tr>
-        </table>
-        </fieldset> 
-        
         <?php
         require_once '../../model/comptedb.php';
-        $clients = listeCompte()-> fetchAll();
-        foreach($comptes as $keys=> $value); 
+        $comptes = listeCompte()->fetchAll();
+        foreach($comptes as $compte); 
         echo" <tr>
-        <td>$value[0]</td>
-        <td>$value[1]</td>
-        <td>$value[2]</td>
-        <td>$value[3]</td>
-        <td>$value[4]</td>
-        <td>$value[5]</td>
-        <td>$value[6]</td>
-        <td>$value[7]</td>
+          <td>$compte[0]</td>
+          <td>$compte[1]</td>
+          <td>$compte[2]</td>
+          <td>$compte[3]</td>
+          <td>$compte[4]</td>
+          <td>$compte[5]</td>
+          <td>$compte[6]</td>
+          <td>$compte[7]</td>
         </tr>";     
-        
-        ?>      
+        ?>    
+        </table>
+        </fieldset>   
     <footer class="bas">@Copyright-2020 Jeremy Simplon @Auf Dakar P3 Dev Web & Mobile</footer>
-<script type="text/javascript" src="indexclient.js"></script>    
+<script type="text/javascript" src="compte.js"></script>    
 </body>
 </html>

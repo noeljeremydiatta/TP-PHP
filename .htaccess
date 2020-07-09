@@ -1,6 +1,5 @@
 RewriteEngine On
 
-RewriteRule ^accueil$ accueil.php
 RewriteRule ^.{0}$ index.php
 RewriteRule ^comptes$ view/compte/liste.php
 RewriteRule ^clients$ view/client/liste.php

@@ -12,85 +12,85 @@
    
        <div class="nav">
        <ul>
-                <li title ="gestion de compte"><a href="comptes">Gestion des comptes</a></li>
-                <li title ="gestion de client"><a href="clients">Gestion des clients</a></li>
+                <li title ="gestion de compte"><a href="comptes">Créer un compte</a></li>
+                <li title ="gestion de client"><a href="clients">Ajouter un client</a></li>
             </ul>
        </div><br/>
 
        <div class="title">Formulaire d'ajout de client</div><br/>
-       <fieldset class="field">
-          <form action="clientController" method="POST">
-          <div id="stacli">
+       <fieldset class="form"><br/>
+          <form action="clientController" method="POST">      
+          <div>
                   <label for="new">Nouveau Client</label>
                   <input type="radio" name="stacli" id="newcli" value="1">
                   <label for="exist">Client Existant</label>
                   <input type="radio" name="stacli" id="cliexi"  value="2">
           </div><br>
-          <div id="tcli">
+          <div>
                   <label for="new">Client physique</label>
                   <input type="radio" name="tcli" id="cliphy" value="phy">
                   <label for="exist">Client Moral</label>
                   <input type="radio" name="tcli" id="climo"  value="mor">
           </div><br>
               
-        <div class="client">
+        <div class="group">
                   <label for="nomcli">Nom :</label>
-                  <input type="text" name="nomcli" id="nomcli"/>
+                  <input type="text" name="nom" id="nomcli"/><br><br/>
                   <label for="precli">Prénom :</label>
-                  <input type="text" name="precli" id="precli"/><br><br/>
+                  <input type="text" name="prenom" id="precli"/><br><br/>
                   <label for="adcli">Adesse :</label>
-                  <input type="text" name="adcli" id="adcli"/>
+                  <input type="text" name="adresse" id="adcli"/><br><br/>
                   <label for="emcli">Email :</label>
-                  <input type="email" name="emcli" id="emcli"/><br><br/>
+                  <input type="email" name="email" id="emcli"/><br><br/>
                   <label for="telcli">Téléphone :</label>
-                  <input type="tel" name="telcli" id="telcli"/>
-                  <label for="idcli">Id client :</label>
-                  <input type="text" name="idcli" id="idcli"/>
-        </div><br><br/>
-        <div class="emplo">
+                  <input type="tel" name="telephone" id="telcli"/><br><br/>
+        </div>
+        <div class="group">
                   <label for="nomem">Nom employeur :</label>
-                  <input type="text" name="nomem" id="nomem"/>
+                  <input type="text" name="nomem" id="nomem"/><br><br/>
                   <label for="rs">Raison sociale :</label>
-                  <input type="text" name="rs" id="rs"/><br><br/>
+                  <input type="text" name="raison" id="rs"/><br><br/>
                   <label for="adem">Adresse employeur :</label>
-                  <input type="text" name="adem" id="adem"/>
-                  <label for="idem">Id employeur :</label>
-                  <input type="text" name="idem" id="idem"/>
-        </div><br><br/>
+                  <input type="text" name="adem" id="adem"/><br><br/>
+        </div>
         <div class="bout">
                     <input type="submit" name="envoyer" id="envoyer" value="envoyer">
                     <input type="reset" name="annuler" id="annuler" value="annuler">
         </div>
           </form><br/>
           </fieldset>
-          <fieldset class="resultat">
-        <div>Liste des clients</div>_
-        <table>
+          <fieldset class="formu">
+        <div class="tab">Liste des clients</div>
+        <table border="1">
         <tr>
         <td>ID</td>
         <td>Nom</td>
         <td>Prenom</td>
         <td>Adresse</td>
         <td>Email</td>
-        <td>Telephone</td>
+        <td>Tel:</td>
+        <td>Employeur</td>
+        <td>Raison </td>
+        <td>Adresse employeur</td>
         </tr>
-        </table>
-        </fieldset> 
-        
         <?php
         require_once '../../model/clientdb.php';
-        $clients = listeClient();
-        foreach($clients as $keys=> $value); 
+        $clients = listeClient()->fetchAll();
+        foreach($clients as $client); 
         echo" <tr>
-        <td>$value[0]</td>
-        <td>$value[1]</td>
-        <td>$value[2]</td>
-        <td>$value[3]</td>
-        <td>$value[4]</td>
-        <td>$value[5]</td>
-        </tr>";     
-        
+        <td>$client[0]</td>
+        <td>$client[1]</td>
+        <td>$client[2]</td>
+        <td>$client[3]</td>
+        <td>$client[4]</td>
+        <td>$client[5]</td>
+        <td>$client[6]</td>
+        <td>$client[7]</td>
+        <td>$client[8]</td>
+        </tr>";    
         ?>
+        </table> 
+        </fieldset> 
     <footer class="bas">@Copyright-2020 Jeremy Simplon @Auf Dakar P3 Dev Web & Mobile</footer>
 <script type="text/javascript" src="client.js"></script>    
 </body>

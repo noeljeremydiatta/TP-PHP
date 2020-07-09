@@ -6,7 +6,7 @@ function getConection()
     $password = '';
     $dbname = 'gestionbanque';
 
-    $dsn = "mysql:host = $host;dbname = $dbname";
+    $dsn = "mysql:host=$host;dbname=$dbname";
 
     try {
         $db = new PDO($dsn, $user, $password);
@@ -15,4 +15,5 @@ function getConection()
     }
     return $db;
 }
+
 ?> 

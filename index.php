@@ -14,8 +14,8 @@
    
        <div class="nav">
          <ul>
-                <li title ="gestion de compte"><a href="comptes">Gestion des comptes</a></li>
-                <li title ="gestion de client"><a href="clients">Gestion des clients</a></li>
+                <li title ="gestion de compte"><a href="comptes">Créer un compte</a></li>
+                <li title ="gestion de client"><a href="clients">Ajouter un client</a></li>
             </ul>
        </div>
       
