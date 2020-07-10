@@ -20,7 +20,6 @@
        </div>
       
         
-    <footer class="bas">@Copyright-2020 Jeremy Simplon @Auf Dakar P3 Dev Web & Mobile</footer>
-<script type="text/javascript" src="indexclient.js"></script>    
+    <footer class="bas">@Copyright-2020 Jeremy Simplon @Auf Dakar P3 Dev Web & Mobile</footer>    
 </body>
 </html>

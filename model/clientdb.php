@@ -1,13 +1,17 @@
 <?php
 require_once 'db.php';
-function addClient($nom, $prenom, $adresse, $email, $telephone, $nomem, $raison, $adem)
+
+function addClient($stacli, $typecli, $nom, $prenom, $adresse, $email, $telephone, $nomem, $raison, $adem)
 {
 
-    $sql = "INSERT INTO client VALUES(NULL, '$nom', '$prenom', '$adresse', '$email', '$telephone', '$nomem', '$raison', '$adem',NULL)";
-    $conn = getConection();
+    $sql = "INSERT INTO client VALUES(NULL,'$stacli', '$typecli','$nom','$prenom','$adresse','$email','$telephone','$nomem','$raison', '$adem')";
 
+    $conn = getConection();
+   
     return $conn->exec($sql);
+  
 }
+
 function listeClient()
 {
 
@@ -17,7 +21,6 @@ function listeClient()
 
     return $conn->query($sql);
 }
-
 
 
 ?>

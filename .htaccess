@@ -1,5 +1,8 @@
 RewriteEngine On
 
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
 RewriteRule ^.{0}$ index.php
 RewriteRule ^comptes$ view/compte/liste.php
 RewriteRule ^clients$ view/client/liste.php

@@ -21,11 +21,11 @@
           <form action="compteController" method="POST">
               <div>
                   <label for="epargne">Compte Epargne</label>
-                  <input type="radio" name="tyco" id="epargne"  value="co1">
+                  <input type="radio" name="tyco" id="epargne"  value="epargne">
                   <label for="courant">Compte Courant</label>
-                  <input type="radio" name="tyco" id="courant"  value="co2">
+                  <input type="radio" name="tyco" id="courant"  value="courant">
                   <label for="bloque">Compte Bloqué</label>
-                  <input type="radio" name="tyco" id="bloque"  value="co3">
+                  <input type="radio" name="tyco" id="bloque"  value="bloque">
               </div><br/>
               <div class="group">
                   <label for="numag">Num agence :</label>
@@ -73,34 +73,39 @@
         <table border ="1">
         <tr>
         <td>ID</td>
+        <td>type compte</td>
         <td>Num Agence</td>
         <td>RIB</td>
         <td>numero compte</td>
         <td>Montant inintial</td>
         <td>Salaire</td>
         <td>Profession</td>
-        <td>Agios</td>
         <td>Frais</td>
+        <td>Agios</td>
         
         </tr>
         <?php
         require_once '../../model/comptedb.php';
         $comptes = listeCompte()->fetchAll();
-        foreach($comptes as $compte); 
+        foreach($comptes as $compte){
+          
         echo" <tr>
-          <td>$compte[0]</td>
-          <td>$compte[1]</td>
-          <td>$compte[2]</td>
-          <td>$compte[3]</td>
-          <td>$compte[4]</td>
-          <td>$compte[5]</td>
-          <td>$compte[6]</td>
-          <td>$compte[7]</td>
-        </tr>";     
+        <td>$compte[0]</td>
+        <td>$compte[1]</td>
+        <td>$compte[2]</td>
+        <td>$compte[3]</td>
+        <td>$compte[4]</td>
+        <td>$compte[5]</td>
+        <td>$compte[6]</td>
+        <td>$compte[7]</td>
+        <td>$compte[8]</td>
+        
+      </tr>"; 
+        }    
         ?>    
         </table>
         </fieldset>   
     <footer class="bas">@Copyright-2020 Jeremy Simplon @Auf Dakar P3 Dev Web & Mobile</footer>
-<script type="text/javascript" src="compte.js"></script>    
+<script type="text/javascript" src="public/js/compte.js"></script>    
 </body>
 </html>

@@ -1,10 +1,9 @@
 <?php
 require_once '../model/clientdb.php'; 
+
 extract($_POST);
-$result = addClient($nom, $prenom, $adresse, $email, $telephone, $nomem, $raison, $adem);
-if($result){
-    echo 'Données ajoutées avec succès';
-}else{
-    echo 'Echec d\'ajout';
-}
+
+$result = addClient($stacli, $typecli, $nom, $prenom, $adresse, $email, $telephone, $nomem, $raison, $adem);
+header("location:http://localhost/projects/SIMPHP/TP-PHP/clients");
+
 ?>

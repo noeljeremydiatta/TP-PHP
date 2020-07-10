@@ -29,7 +29,8 @@ body{
     background-color: black;
 }
 .field{
-    width: fit-content;
+    max-width: 100px;
+   /* width: fit-content;*/
     display: inline-block;
 }
 .form{
@@ -83,3 +84,4 @@ display: inline-block;
    border-radius: 20px;
    color: white;
 }
+
